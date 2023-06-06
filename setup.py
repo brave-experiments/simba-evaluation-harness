@@ -22,6 +22,7 @@ setuptools.setup(
     python_requires=">=3.9",
     install_requires=[
         "datasets>=2.0.0",
+        "einops>=0.6.1",
         "jsonlines",
         "numexpr",
         "openai>=0.6.4",
