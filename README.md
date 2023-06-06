@@ -24,11 +24,28 @@ aws s3 sync s3://bucket_name/path_to_saved_model .
 
 ```bash
 python main.py \
-    --model hf-causal \
+    --model hf-causal{,-experimental} \
     --model_args pretrained={model_name OR ./path_to_saved/model} \
     --tasks simba \
     --device cuda:0
 ```
+
+e.g.
+
+```bash
+MODEL_REPO="OpenAssistant"
+MODEL_NAME="falcon-7b-sft-mix-2000"
+python main.py
+    --model hf-causal-experimental \
+    --model_args pretrained=${MODEL_REPO}/${MODEL_NAME},trust_remote_code=True \
+    --tasks simba \
+    --device cuda:0 \
+    --output_path results/${MODEL_NAME}.log |& tee ../logs/${MODEL_NAME}.log
+```
+
+### hf-causal vs. hf-causal-experimental
+
+The former is using `lm_eval/models/gpt2.py` while the latter the `lm_eval/models/huggingface.py` backend. The HF backend seems to be significantly faster in the evaluation and more versatile in terms of the supported arguments. Also it supports multi-gpu setups.
 
 ## Install
 
