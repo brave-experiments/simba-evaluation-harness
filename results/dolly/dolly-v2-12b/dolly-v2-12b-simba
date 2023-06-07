@@ -1,0 +1,34 @@
+{
+  "results": {
+    "hellaswag": {
+      "acc": 0.5422226648078072,
+      "acc_stderr": 0.004971958480920492,
+      "acc_norm": 0.7088229436367257,
+      "acc_norm_stderr": 0.004533764686211998
+    },
+    "race": {
+      "acc": 0.3827751196172249,
+      "acc_stderr": 0.015043306814111519
+    },
+    "triviaqa": {
+      "acc": 0.18624591178290462,
+      "acc_stderr": 0.0036603302225295966
+    }
+  },
+  "versions": {
+    "hellaswag": 0,
+    "race": 1,
+    "triviaqa": 1
+  },
+  "config": {
+    "model": "hf-causal-experimental",
+    "model_args": "pretrained=databricks/dolly-v2-12b,trust_remote_code=True",
+    "num_fewshot": 0,
+    "batch_size": null,
+    "device": "cuda:0",
+    "no_cache": false,
+    "limit": null,
+    "bootstrap_iters": 100000,
+    "description_dict": {}
+  }
+}
