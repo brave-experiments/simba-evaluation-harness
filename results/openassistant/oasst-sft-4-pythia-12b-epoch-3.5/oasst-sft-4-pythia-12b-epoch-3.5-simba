@@ -1,0 +1,34 @@
+{
+  "results": {
+    "hellaswag": {
+      "acc": 0.5210117506472814,
+      "acc_stderr": 0.0049853735507751065,
+      "acc_norm": 0.6811392152957578,
+      "acc_norm_stderr": 0.004650825168905204
+    },
+    "race": {
+      "acc": 0.3952153110047847,
+      "acc_stderr": 0.015130978883893868
+    },
+    "triviaqa": {
+      "acc": 0.1334747635463626,
+      "acc_stderr": 0.003197573158204388
+    }
+  },
+  "versions": {
+    "hellaswag": 0,
+    "race": 1,
+    "triviaqa": 1
+  },
+  "config": {
+    "model": "hf-causal-experimental",
+    "model_args": "pretrained=OpenAssistant/oasst-sft-4-pythia-12b-epoch-3.5,trust_remote_code=True",
+    "num_fewshot": 0,
+    "batch_size": null,
+    "device": "cuda:0",
+    "no_cache": false,
+    "limit": null,
+    "bootstrap_iters": 100000,
+    "description_dict": {}
+  }
+}
