@@ -3,7 +3,7 @@
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib/x86_64-linux-gnu/
 
 for MODEL in "VMware/open-llama-13b-open-instruct";do
-    for TASK in "simba_pc" "simba_knowledge" "simba_mmlu"; do
+    for TASK in "simba_comprehension" "simba_knowledge" "simba_commonsense" "simba_pc" "simba_mmlu"; do
 
         MODEL_REPO=$(echo $MODEL | cut -d '/' -f 1)
         MODEL_NAME=$(echo $MODEL | cut -d '/' -f 2)
@@ -19,7 +19,7 @@ for MODEL in "VMware/open-llama-13b-open-instruct";do
 done
 
 for MODEL in "OpenAssistant/falcon-40b-sft-mix-1226" "tiiuae/falcon-40b-instruct" ;do
-    for TASK in "simba_pc" "simba_knowledge" "simba_mmlu"; do
+    for TASK in "simba_comprehension" "simba_knowledge" "simba_commonsense" "simba_pc" "simba_mmlu"; do
 
         MODEL_REPO=$(echo $MODEL | cut -d '/' -f 1)
         MODEL_NAME=$(echo $MODEL | cut -d '/' -f 2)
@@ -35,7 +35,7 @@ for MODEL in "OpenAssistant/falcon-40b-sft-mix-1226" "tiiuae/falcon-40b-instruct
 done
 
 for MODEL in "OpenAssistant/oasst-sft-4-pythia-12b-epoch-3.5" "databricks/dolly-v2-12b" ;do
-    for TASK in "simba_pc" "simba_knowledge" "simba_mmlu"; do
+    for TASK in "simba_comprehension" "simba_knowledge" "simba_commonsense" "simba_pc" "simba_mmlu"; do
 
         MODEL_REPO=$(echo $MODEL | cut -d '/' -f 1)
         MODEL_NAME=$(echo $MODEL | cut -d '/' -f 2)

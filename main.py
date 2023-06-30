@@ -5,7 +5,9 @@ import os
 
 from lm_eval import tasks, evaluator, utils
 from lm_eval.datasets.simba import (
+    SIMBA_COMPREHENSION_TASK_SET,
     SIMBA_KNOWLEDGE_TASK_SET,
+    SIMBA_COMMONSENSE_TASK_SET,
     SIMBA_PC_TASK_SET,
     SIMBA_MMLU_TASK_SET
 )
@@ -51,8 +53,12 @@ def main():
 
     if args.tasks is None:
         task_names = tasks.ALL_TASKS
+    elif args.tasks == "simba_comprehension":
+        task_names = utils.pattern_match(SIMBA_COMPREHENSION_TASK_SET, tasks.ALL_TASKS)
     elif args.tasks == "simba_knowledge":
         task_names = utils.pattern_match(SIMBA_KNOWLEDGE_TASK_SET, tasks.ALL_TASKS)
+    elif args.tasks == "simba_commonsense":
+        task_names = utils.pattern_match(SIMBA_COMMONSENSE_TASK_SET, tasks.ALL_TASKS)
     elif args.tasks == "simba_pc":
         task_names = utils.pattern_match(SIMBA_PC_TASK_SET, tasks.ALL_TASKS)
     elif args.tasks == "simba_mmlu":

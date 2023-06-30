@@ -1,13 +1,20 @@
+SIMBA_COMPREHENSION_TASK_SET = [
+    'race',
+]
+
 SIMBA_KNOWLEDGE_TASK_SET = [
+    'triviaqa',
+]
+
+SIMBA_COMMONSENSE_TASK_SET = [
     'hellaswag',
     'winogrande',
     'arc-easy',
     'arc-challenge',
-    'triviaqa',
+    'race',
 ]
 
 SIMBA_PC_TASK_SET = [
-    'race',
     'truthfulqa_gen',
     'truthfulqa_mc',
     'crows_pairs_english'
