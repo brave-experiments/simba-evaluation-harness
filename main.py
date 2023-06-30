@@ -4,11 +4,16 @@ import logging
 import os
 
 from lm_eval import tasks, evaluator, utils
+from lm_eval.datasets.simba import (
+    SIMBA_KNOWLEDGE_TASK_SET,
+    SIMBA_PC_TASK_SET,
+    SIMBA_MMLU_TASK_SET
+)
+
 
 logging.getLogger("openai").setLevel(logging.WARNING)
+tasks.ALL_TASKS.extend(['simba_knowledge', 'simba_pc', 'simba_mmlu'])
 
-SIMBA_TASK_SET = ["hellaswag", "winograde", "arc", "race", "triviaqa", "mmlu", "winogender", "truthfulqa"]
-tasks.ALL_TASKS.append('simba')
 
 def parse_args():
     parser = argparse.ArgumentParser()
@@ -46,8 +51,12 @@ def main():
 
     if args.tasks is None:
         task_names = tasks.ALL_TASKS
-    elif args.tasks == "simba":
-        task_names = utils.pattern_match(SIMBA_TASK_SET, tasks.ALL_TASKS)
+    elif args.tasks == "simba_knowledge":
+        task_names = utils.pattern_match(SIMBA_KNOWLEDGE_TASK_SET, tasks.ALL_TASKS)
+    elif args.tasks == "simba_pc":
+        task_names = utils.pattern_match(SIMBA_PC_TASK_SET, tasks.ALL_TASKS)
+    elif args.tasks == "simba_mmlu":
+        task_names = utils.pattern_match(SIMBA_MMLU_TASK_SET, tasks.ALL_TASKS)
     else:
         task_names = utils.pattern_match(args.tasks.split(","), tasks.ALL_TASKS)
 
