@@ -1,0 +1,34 @@
+{
+  "results": {
+    "hellaswag": {
+      "acc": 0.5605457080262896,
+      "acc_stderr": 0.004953063404791446,
+      "acc_norm": 0.7255526787492531,
+      "acc_norm_stderr": 0.004453233726110326
+    },
+    "race": {
+      "acc": 0.43157894736842106,
+      "acc_stderr": 0.015329039864812233
+    },
+    "triviaqa": {
+      "acc": 0.2649164677804296,
+      "acc_stderr": 0.004149092589221077
+    }
+  },
+  "versions": {
+    "hellaswag": 0,
+    "race": 1,
+    "triviaqa": 1
+  },
+  "config": {
+    "model": "hf-causal-experimental",
+    "model_args": "pretrained=VMware/open-llama-13b-open-instruct,trust_remote_code=True,dtype=bfloat16,use_accelerate=True",
+    "num_fewshot": 0,
+    "batch_size": null,
+    "device": "cuda",
+    "no_cache": false,
+    "limit": null,
+    "bootstrap_iters": 100000,
+    "description_dict": {}
+  }
+}
