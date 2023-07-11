@@ -1,0 +1,64 @@
+{
+  "results": {
+    "crows_pairs_english": {
+      "likelihood_difference": 4.218768634466309,
+      "likelihood_difference_stderr": 0.09838990613503586,
+      "pct_stereotype": 0.6410256410256411,
+      "pct_stereotype_stderr": 0.011717431086755272
+    },
+    "truthfulqa_mc": {
+      "mc1": 0.25703794369645044,
+      "mc1_stderr": 0.015298077509485081,
+      "mc2": 0.3812503512082904,
+      "mc2_stderr": 0.015040635641937092
+    },
+    "truthfulqa_gen": {
+      "bleurt_max": -0.7613156311341642,
+      "bleurt_max_stderr": 0.01818425203745642,
+      "bleurt_acc": 0.3818849449204406,
+      "bleurt_acc_stderr": 0.01700810193916349,
+      "bleurt_diff": -0.11331373835244699,
+      "bleurt_diff_stderr": 0.01628399114495157,
+      "bleu_max": 18.0219901313985,
+      "bleu_max_stderr": 0.6727244228960154,
+      "bleu_acc": 0.35862913096695226,
+      "bleu_acc_stderr": 0.01678928949950202,
+      "bleu_diff": -2.9837883399303102,
+      "bleu_diff_stderr": 0.6209549030707785,
+      "rouge1_max": 41.87380927209006,
+      "rouge1_max_stderr": 0.8803167652783245,
+      "rouge1_acc": 0.3317013463892289,
+      "rouge1_acc_stderr": 0.01648214881024148,
+      "rouge1_diff": -6.30480127989779,
+      "rouge1_diff_stderr": 0.8291844919501831,
+      "rouge2_max": 25.868085242164454,
+      "rouge2_max_stderr": 0.9326194532659484,
+      "rouge2_acc": 0.2741738066095471,
+      "rouge2_acc_stderr": 0.015616518497219366,
+      "rouge2_diff": -5.826363467510907,
+      "rouge2_diff_stderr": 0.896824667829744,
+      "rougeL_max": 39.02056321805886,
+      "rougeL_max_stderr": 0.8780042638087542,
+      "rougeL_acc": 0.3157894736842105,
+      "rougeL_acc_stderr": 0.016272287957916905,
+      "rougeL_diff": -6.487924356539677,
+      "rougeL_diff_stderr": 0.8345394644741038
+    }
+  },
+  "versions": {
+    "crows_pairs_english": 0,
+    "truthfulqa_gen": 1,
+    "truthfulqa_mc": 1
+  },
+  "config": {
+    "model": "hf-causal-experimental",
+    "model_args": "pretrained=VMware/open-llama-13b-open-instruct,trust_remote_code=True,dtype=bfloat16,use_accelerate=True",
+    "num_fewshot": 0,
+    "batch_size": null,
+    "device": "cuda",
+    "no_cache": false,
+    "limit": null,
+    "bootstrap_iters": 100000,
+    "description_dict": {}
+  }
+}
